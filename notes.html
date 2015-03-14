@@ -1,0 +1,54 @@
+maybe do scroll wheel for weight amounts instead of text input? cuts down on user error
+
+what will trigger the calculation? keyup? dynamic calculation is nice
+
+formula
+
+have sub totals for each category
+
+
+calculate function
+
+.val doesn't work with checkboxes!
+
+
+loop through javascript objects/arrays
+
+
+
+<button>calculate</button>
+
+<script>
+
+//click listener for the button
+$('button').click(calculate);
+// call calculate other times, listen on input and select for the drop down menu
+$('input,select').change(calculate);
+
+function calculate() {
+
+	var budget   = $('#budget').val();
+	var rooms    = $('#room_count').val();
+	//serviced are checkboxes, no .val. ".checked" allows us to only run function the ones that are checked
+	var services = $('input[name=services]:checked');
+	// declare total outside loop
+	var total    = 0;
+	// jquery for loop to get the text inputs or values
+	services.each(function(){
+		//(this) helps us iterate
+		console.log($(this).val());
+		// but we only want to calculate the ones that are checked? use if statement or make grabber more specifi
+		var price = $(this).val();
+		var amount = price * rooms;
+		total = total + amount; //don't call it var because it will reset every time through the loop
+	});
+
+	$('#output').html(total);
+		//console.log(total);
+
+	//console.log("test");
+
+};
+
+
+</script>
