@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
-<head>
+
+<head>	
+
+	<meta charset="utf-8">
+	<!-- Always force latest IE rendering engine & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
 	<title>Pack Weight</title>
+	<meta name="description" content="A simple Javascript backpack weight calculator.">
+	<meta name="keywords" content="responsive, backpacking, ultralight, gear, list, web design">
+
+	<meta name="author" content="www.katorthedinosaur.com">
+
+	<meta http-equiv="cleartype" content="on">
+
+	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+
+	<!-- Responsive and mobile friendly stuff -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 	<!-- link and two styles from jq UI page for accordian  	-->
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 	<script src="js/modernizr.custom.js"></script>
 	<script src="js/classie.js"></script>
-	<!-- Datatable scripts -->
-	<!--<script type="text/javascript" language="javascript" src="media/js/jquery.js"></script>-->
-	<script type="text/javascript" src="media/js/jquery.dataTables.js"></script>
-	<link rel="stylesheet" href="media/css/jquery.dataTables.css" type="text/css">
-	<link rel="stylesheet" href="css/packWeight.css" type="text/css">
-	<link rel="stylesheet" href="css/accordion.css" type="text/css">
+
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css">
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
 	<!-- google font -->
 	<link href='http://fonts.googleapis.com/css?family=Viga|Roboto:300|Doppio+One|Source+Sans+Pro:400,400italic|Days+One' rel='stylesheet' type='text/css'>
 </head>
@@ -22,9 +40,8 @@
 
 <body>
 
-<div id="header"></div>
 
-<div id="container">
+<div id="wrapper">
 	<div id="left">
 		<div id = "name">pack weight</div>
 		<div id = "output"><div id="chosen_unit"></div></div>
@@ -63,12 +80,12 @@
 					<tr><td class="name">Sleeping Pad 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='sleeping_pad'></td></tr>
 					<tr><td class="name">Sleeping Bag Liner	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='sleeping_bad_liner'></td></tr>					
 					<tr class="header_row"><td>packing</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Backpack				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack'></td></tr>					
-					<tr><td class="name">Backpack Raincover		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack_raincover'></td></tr>
+					<tr><td class="name">Pack				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack'></td></tr>					
+					<tr><td class="name">Pack Cover		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack_raincover'></td></tr>
 					<tr><td class="name">Stuff Sacks 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='stuff_sacks'></td></tr>
 					</table>
 				</div>
-				<h3>Clothing <!-- <div id="add_item"> </div><input class ='new_item' id="new_clothing" type='text' size="10">  --></h3> 
+				<h3>Clothing</h3> 
 				<div id = "clothing">
 					<table>
 						<tr class="header_row"><td>clothing</td><td>description</td><td>weight (oz.)</td></tr>
@@ -166,41 +183,18 @@
 					<tr><td class="name">Personal Locator Beacon	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='oh_god_help_us'></td></tr>
 					</table>
 				</div>
-<!-- 				<h3>Food/Water</h3>
-				<div id = "food">
-				</div> -->
 			</div> <!-- end accordion div -->
+	</div>
 
-	</div> <!-- end right side div -->
-
-<!--  	 	<div id="tabs">
-			<ul>
-				<li><a href="#bottom">Complete List</a></li>
-				<li><a href="#meals">Meal Planner</a></li>
-			</ul>   -->
 			<div id="bottom">
 				<h2>All Items</h2>
 				<table id="all_pack_items">
 					<thead><tr><td>Item</td><td>Category</td><td>Weight</td></tr></thead>
 					<tbody></tbody>
 				</table>
-			</div> <!-- end of bottom div -->
-<!-- 			<div id="meals">
-				<table id="food_and_water">
-					<thead><tr><td>Meal</td><td>Description</td><td>Weight</td></tr></thead>
-					<tbody>
-						<tr><td>Breakfast</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='bfast'></td> </tr>
-						<tr><td>Snack #1</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='snack_1'></td> </tr>
-						<tr><td>Lunch</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='lunch'></td> </tr>
-						<tr><td>Snack #2</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='snack_2'></td> </tr>
-						<tr><td>Dinner</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='dinner'></td> </tr>
-						<tr><td>Snack #3</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='snack_3'></td> </tr>
-					</tbody>
-				</table>
-			</div>  end of meals div 
- 		</div> end of tabs div  -->
+			</div> 
  
-</div> <!-- end of container div -->
+</div> <!-- end of wrapper div -->
 
 
 <script>

@@ -1,0 +1,421 @@
+
+/* ==========================================================================  
+
+   CSS Pack Weight - Author: Katherine Wyman www.katorthedinosaur.com
+
+    First JS project
+
+   ========================================================================== */
+
+body {
+    line-height:1.25em;
+    height: 100%;
+    background-image:url("../img/background.JPG");
+    background-size: cover;
+    background-attachment:fixed;
+   /* background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center; */
+}
+
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+h1 {
+    font-size:1.5em;
+    line-height: 1.75em;
+    color: #DF0018;
+}
+
+h2 {
+    font-size:1em;
+    color: #DF0018;
+    margin-top: .75em;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: .85em;
+    color: #000000;
+}
+
+a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    color: #999999;
+}
+
+table{
+    width: 100%;
+}
+
+
+
+
+
+#wrapper {
+    display: block;
+    width: 815px;
+    margin: 75px auto;
+    padding: 0px;
+    min-height: 800px;
+}
+
+#header{
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0,0,0,0.50);
+}
+
+
+/*----------------------------------------------------------------------------------------
+    left side
+----------------------------------------------------------------------------------------*/
+
+#left{
+    display: inline;
+    width:250px;
+    float: left;
+
+}
+
+
+/* ==================================
+ Site Title Box
+================================== */
+
+#name{
+    display: block;
+    background-color: #E9633B;
+    margin-bottom: 15px;
+    font-family: 'Viga', sans-serif;
+    font-size: 48px;
+    padding: 20px;
+    text-align: right;
+    color: #181818;
+    line-height: 50px;
+    height: 140px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+}
+
+
+/* ==================================
+ Output Box
+================================== */
+
+#output{
+    display: block;
+    background-color: #ECEAE0;
+    margin-bottom: 15px;
+    font-family: 'Doppio One', sans-serif;
+    font-size: 32px;
+    font-size: 64px;
+    color:#666666;
+    padding: 40px 0px;
+    text-align: center;
+    height: 100px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+}
+
+
+/* ==================================
+ Unit Selection Box
+================================== */
+
+#units{
+    display: block;
+    background-color: #63AA9C;
+    padding: 0px;
+    margin-bottom: 15px;
+    text-align: center;
+    height: 75px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+}
+
+
+/* ==================================
+ Summary Block
+================================== */
+
+#summary{
+    display: block;
+    background-color: #CB8C1D;
+    height: 250px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+    font-family: 'Doppio One', sans-serif;
+    font-size: 24px;
+    color: #383838;
+}
+
+#summary p{
+    padding: 15px;
+    font-family: 'Doppio One', sans-serif;
+    font-size: 24px;
+    color: #383838;
+}
+
+#summary table{
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    padding: 5px;
+}
+
+#summary td{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/*
+#converter{
+    display: block;
+    background-color: #FF6666;
+    padding: 0px;
+    margin-bottom: 15px;
+    text-align: center;
+    height: 65px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+}
+*/
+
+
+.category_title{
+    font-family: 'Days One', sans-serif;
+    width: 70%;
+}
+
+/*----------------------------------------------------------------------------------------
+    right side
+----------------------------------------------------------------------------------------*/
+
+
+#right{
+    display: inline;
+    width: 550px;
+    float: left;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    min-height: 610px;
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+}
+
+
+/* ==============================================================
+ Accordion restyling 
+============================================================== */
+input[class="item_weight_input"]{
+    margin-left: 5px;
+}
+
+#accordion input{
+    float: right;
+}
+
+
+#accordion h3{
+    font-family: 'Doppio One', sans-serif;
+    font-size: 20px;
+}
+
+#accordion .header_row {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #707070;
+    font-size: 12px;
+    text-align: right;
+}
+
+#accordion .new_item{
+    display: none;
+    font-size: 16px;
+    float: right;
+}
+
+#accordion #add_item{
+    display: inline;
+    float: right;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+}
+
+#accordion .name{
+    width: 150px;
+}
+
+
+#accordion .ui-accordion-header{
+   background: #383838;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    color:#ffffff;
+    padding: 12px;
+}
+
+#accordion .ui-accordion-content{
+   background: #ffffff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    margin: 0px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+}
+
+
+
+/*----------------------------------------------------------------------------------------
+    bottom
+----------------------------------------------------------------------------------------*/
+
+#bottom{
+    display:block;
+    clear:both;
+    font-family: 'Doppio One', sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #6699cc;
+    text-align: left;
+    color: #383838;
+    min-height: 200px;
+    border: 0px;
+}
+
+#bottom h2{
+    display: inline;
+    font-family: 'Doppio One', sans-serif;
+    color: #383838;
+    font-size: 28px;
+}
+
+
+/* ==============================================================
+  DataTables Restyling
+============================================================== */
+
+#all_pack_items{
+    clear: both;
+    font-family: 'Roboto',sans-serif;
+    font-size: 18px;
+    border: 2px solid white;
+    margin-top: 30px;
+}
+
+#all_pack_items thead{
+    font-family: 'Doppio One', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+#all_pack_items_filter{
+    display: inline;
+    float:right;
+    margin-bottom: 10px;
+}
+
+
+#all_pack_items thead td{
+    font-family: 'Doppio One', sans-serif;
+    font-size: 18px;
+}
+
+#all_pack_items td{
+    padding: 5px;
+    margin: 2px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+}
+
+#all_pack_items tbody tr.even td {
+    background: #85ADD6;
+}
+
+#all_pack_items tbody tr.odd td {
+    background: #bcd9e1;
+}
+
+
+
+/*----------------------------------------------------------------------------------------
+    button biz
+----------------------------------------------------------------------------------------*/
+
+.btn {
+    border: none;
+    font-family: 'Doppio One', sans-serif;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+    margin: 15px 8px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+*, *:after, *:before { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+
+
+
+/* Button 1 */
+.btn-1 {
+    border: 3px solid #fff;
+    color: #fff;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+    color: #0e83cd;
+    background: #fff;
+}
