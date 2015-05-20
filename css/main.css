@@ -63,35 +63,26 @@ table{
 }
 
 
-
-
-
-#wrapper {
-    display: block;
-    width: 815px;
-    margin: 75px auto;
-    padding: 0px;
-    min-height: 800px;
+#wrapper{
+    max-width: 1024px;
+    margin: 30px auto;
 }
 
-#header{
-    display: block;
-    width: 100%;
-    height: 40px;
-    background-color: rgba(0,0,0,0.50);
+
+.content_boxes{
+    -webkit-box-shadow: 1px 1px 30px #000000;
+    -moz-box-shadow: 1px 1px 30px #000000;
+    box-shadow:  1px 1px 30px #000000;
+    margin-bottom: 15px;
 }
+
 
 
 /*----------------------------------------------------------------------------------------
     left side
 ----------------------------------------------------------------------------------------*/
 
-#left{
-    display: inline;
-    width:250px;
-    float: left;
 
-}
 
 
 /* ==================================
@@ -101,17 +92,13 @@ table{
 #name{
     display: block;
     background-color: #E9633B;
-    margin-bottom: 15px;
     font-family: 'Viga', sans-serif;
-    font-size: 48px;
+    font-size: 55px;
     padding: 20px;
     text-align: right;
     color: #181818;
     line-height: 50px;
     height: 140px;
-    -webkit-box-shadow: 1px 1px 30px #000000;
-    -moz-box-shadow: 1px 1px 30px #000000;
-    box-shadow:  1px 1px 30px #000000;
 }
 
 
@@ -122,17 +109,12 @@ table{
 #output{
     display: block;
     background-color: #ECEAE0;
-    margin-bottom: 15px;
     font-family: 'Doppio One', sans-serif;
-    font-size: 32px;
     font-size: 64px;
     color:#666666;
     padding: 40px 0px;
     text-align: center;
     height: 100px;
-    -webkit-box-shadow: 1px 1px 30px #000000;
-    -moz-box-shadow: 1px 1px 30px #000000;
-    box-shadow:  1px 1px 30px #000000;
 }
 
 
@@ -141,15 +123,12 @@ table{
 ================================== */
 
 #units{
+    clear:both;
     display: block;
     background-color: #63AA9C;
     padding: 0px;
-    margin-bottom: 15px;
     text-align: center;
     height: 75px;
-    -webkit-box-shadow: 1px 1px 30px #000000;
-    -moz-box-shadow: 1px 1px 30px #000000;
-    box-shadow:  1px 1px 30px #000000;
 }
 
 
@@ -158,13 +137,8 @@ table{
 ================================== */
 
 #summary{
-    display: block;
     background-color: #CB8C1D;
-    height: 250px;
-    margin-bottom: 15px;
-    -webkit-box-shadow: 1px 1px 30px #000000;
-    -moz-box-shadow: 1px 1px 30px #000000;
-    box-shadow:  1px 1px 30px #000000;
+    height: auto;
     font-family: 'Doppio One', sans-serif;
     font-size: 24px;
     color: #383838;
@@ -181,10 +155,12 @@ table{
     font-family: 'Roboto',sans-serif;
     font-size: 14px;
     padding: 5px;
+    width:90%;
+    margin: 0 auto;
 }
 
 #summary td{
-    border: 1px solid black;
+    border: 1px solid #fff;
     padding: 5px;
 }
 
@@ -214,16 +190,7 @@ table{
 
 
 #right{
-    display: inline;
-    width: 550px;
-    float: left;
-    margin-left: 15px;
-    margin-bottom: 15px;
     color: #ffffff;
-    min-height: 610px;
-    -webkit-box-shadow: 1px 1px 30px #000000;
-    -moz-box-shadow: 1px 1px 30px #000000;
-    box-shadow:  1px 1px 30px #000000;
 }
 
 
@@ -238,6 +205,21 @@ input[class="item_weight_input"]{
     float: right;
 }
 
+#accordion td{
+    padding: 2px 5px;
+}
+#accordion .col_1{width: 25%;}
+#accordion .col_2{width: 55%;}
+#accordion .col_3{width: 10%;}
+
+input[class="desc"]{
+    width: 100%;
+}
+
+input[class="calculate"]{
+    width: 100px;
+}
+
 
 #accordion h3{
     font-family: 'Doppio One', sans-serif;
@@ -249,8 +231,13 @@ input[class="item_weight_input"]{
     color: #707070;
     font-size: 12px;
     text-align: right;
+    padding-top: 30px;
 }
 
+#accordion .header_row td{
+    padding-top: 10px;
+}
+/*
 #accordion .new_item{
     display: none;
     font-size: 16px;
@@ -263,11 +250,8 @@ input[class="item_weight_input"]{
     width: 25px;
     height: 25px;
     background-color: red;
-}
+}*/
 
-#accordion .name{
-    width: 150px;
-}
 
 
 #accordion .ui-accordion-header{
@@ -288,6 +272,7 @@ input[class="item_weight_input"]{
     margin: 0px;
     font-family: 'Roboto',sans-serif;
     font-size: 14px;
+    padding: 10px;
 }
 
 

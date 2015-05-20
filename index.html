@@ -19,7 +19,9 @@
 	<!-- Responsive and mobile friendly stuff -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -33,6 +35,7 @@
 	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css">
 	<link rel="stylesheet" href="css/normalize.css" type="text/css">
 	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/responsive.css" type="text/css">
 	<!-- google font -->
 	<link href='http://fonts.googleapis.com/css?family=Viga|Roboto:300|Doppio+One|Source+Sans+Pro:400,400italic|Days+One' rel='stylesheet' type='text/css'>
 </head>
@@ -42,166 +45,161 @@
 
 
 <div id="wrapper">
-	<div id="left">
-		<div id = "name">pack weight</div>
-		<div id = "output"><div id="chosen_unit"></div></div>
-		<div id = "units">	
-			<button class = "btn btn-1 btn-1a" id="ounces">ounces</button>
-			<button class = "btn btn-1 btn-1a" id="grams">grams</button>
-		</div>
-		<div id = "summary">
-			<p>Summary</p>
-			<table>
-				<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
-				<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
-				<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
-				<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
-				<tr><td class = "category_title">Other:</td>				<td><div id="other_total"></div></td></tr>
-			</table>
-		</div>
-<!-- 		<div id="converter">
-			<p>convert here!</p>
-		</div> -->
- 	</div> <!-- end of left div -->
-
-
-
-	<div id="right">
-			<div id="accordion">
-				<h3>Big 3</h3>
-				<div id="big3">
-					<table>
-					<tr class="header_row"><td>shelter</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Tent 				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='tent'></td></tr>
-					<tr><td class="name">Tent Stakes			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='tent_stakes'></td></tr>
-					<tr><td class="name">Ground Cloth 		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='ground_cloth'></td></tr>
-					<tr class="header_row"><td>sleep</td><td>description</td><td>weight (oz.)</td></tr>					
-					<tr><td class="name">Sleeping Bag		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='sleeping_bag'></td></tr>
-					<tr><td class="name">Sleeping Pad 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='sleeping_pad'></td></tr>
-					<tr><td class="name">Sleeping Bag Liner	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='sleeping_bad_liner'></td></tr>					
-					<tr class="header_row"><td>packing</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Pack				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack'></td></tr>					
-					<tr><td class="name">Pack Cover		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='backpack_raincover'></td></tr>
-					<tr><td class="name">Stuff Sacks 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='stuff_sacks'></td></tr>
-					</table>
-				</div>
-				<h3>Clothing</h3> 
-				<div id = "clothing">
-					<table>
-						<tr class="header_row"><td>clothing</td><td>description</td><td>weight (oz.)</td></tr>
-						<tr><td class="name">Rain Pants 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='rain_pants'></td></tr>
-						<tr><td class="name">Rain Jacket			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='rain_jacket'></td></tr>
-						<tr><td class="name">Fleece Jacket 		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='fleece_jacket'></td></tr>
-						<tr><td class="name">Pants 				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='pants'></td></tr>
-						<tr><td class="name">Shorts 				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='shorts'></td></tr>
-						<tr><td class="name">Baselayer Top		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='base_layer_top'></td></tr>
-						<tr><td class="name">Baselayer Bottom	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='base_layer_bottoms'></td></tr>
-						<tr><td class="name">Long Sleeve Shirt	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='long_sleeve'></td></tr>
-						<tr><td class="name">Short Sleeve Shirt	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='short_sleeve'></td></tr>
-						<tr><td class="name">Underwear 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='underwear'></td></tr>
-						<tr><td class="name">Bra					</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='bra'></td></tr>
-						<tr class="header_row"><td>footwear</td><td>description</td><td>weight (oz.)</td></tr>
-						<tr><td class="name">Water Shoes			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='water_shoes'></td></tr>
-						<tr><td class="name">Camp Shoes			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='camp_shoes'></td></tr>
-						<tr><td class="name">Hiking Shoes		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='hiking_shoes'></td></tr>					
-						<tr><td class="name">Wool Socks			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='wool_socks'></td></tr>
-						<tr><td class="name">Hiking Socks		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='hiking_socks'></td></tr>
-						<tr><td class="name">Gaiters				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='gaiters'></td></tr>
-						<tr class="header_row"><td>accessories</td><td>description</td><td>weight (oz.)</td></tr>
-						<tr><td class="name">Wool Hat			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='wool_hat'></td></tr>
-						<tr><td class="name">Ball Cap 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='ball_cap'></td></tr>					
-						<tr><td class="name">Buff				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='buff'></td></tr>					
-						<tr><td class="name">Gloves				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='gloves'></td></tr>					
-						<tr><td class="name">Overmits			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='overmits'></td></tr>
-					</table>
-				</div>
-				<h3>Kitchen</h3>
-				<div id = "kitchen">
-					<table>
-					<tr class="header_row"><td>cooking/eating</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Stove 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='stove'></td></tr>
-					<tr><td class="name">Fuel			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='fuel'></td></tr>
-					<tr><td class="name">Pot 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='pot'></td></tr>
-					<tr><td class="name">Spork			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='spork'></td></tr>
-					<tr><td class="name">Cup				</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='cup'></td></tr>
-					<tr class="header_row"><td>storage</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Bear Bag/Can 	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='bear_bag'></td></tr>
-					<tr><td class="name">Bear Bag Rope	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='bear_bag_rope'></td></tr>					
-					<tr><td class="name">Grocery Bags    	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='grocery_bags'></td></tr>
-					<tr><td class="name">Ziplock Bags    	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='ziplock_bags'></td></tr>				
-					<tr class="header_row"><td>water</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Aqua Mira 			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='aqua_mira'></td></tr>
-					<tr><td class="name">Water Bottles   	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='water_bottles'></td></tr>				
-					<tr><td class="name">Water Bladder		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate" size="10" id='water_bladder'></td></tr>
-					</table>
-				</div>
-				<h3>Health & Hygiene</h3>
-				<div id = "health">
-					<table>
-					<tr class="header_row"><td>hygiene</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Tooth Brush		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='tooth_brush'></td></tr>
-					<tr><td class="name">Tooth Paste		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10 calculate" id='tooth_paste'></td></tr>
-					<tr><td class="name">Towel			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='trowel'></td></tr>
-					<tr><td class="name">Toilet Paper	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='toilet_paper'></td></tr>
-					<tr><td class="name">Hand Sanitizer	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='hand_sanitizer'></td></tr>
-					<tr><td class="name">Trowel			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='trowel'></td></tr>
-					<tr class="header_row"><td>health</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">First Aid Kit	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='first_aid_kit'></td></tr>
-					<tr><td class="name">Bandaids		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='band_aids'></td></tr>
-					<tr><td class="name">Moleskin		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='moleskin'></td></tr>
-					<tr><td class="name">Aspirin    		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='aspirin'></td></tr>				
-					<tr class="header_row"><td>extra</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Lip Balm		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='lip_balm'></td></tr>
-					<tr><td class="name">Bug Spray		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='bug_spray'></td></tr>
-					<tr><td class="name">Hair Ties 		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='hair_ties'></td></tr>
-					<tr><td class="name">Sun Screen		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='sun_screen'></td></tr>
-					</table>
-				</div>
-				<h3>Other/Extra</h3>
-				<div id = "other">
-					<table>
-					<tr class="header_row"><td>electronics</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Umbrella		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='umbrella'></td></tr>
-					<tr><td class="name">Trekking Poles	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='trekking_poles'></td></tr>
-					<tr><td class="name">Sunglasses		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='sunglasses'></td></tr>
-					<tr><td class="name">Headlamp		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='headlamp'></td></tr>
-					<tr><td class="name">Book			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='book'></td></tr>
-					<tr class="header_row"><td>electronics</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Batteries		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='batteries'></td></tr>
-					<tr><td class="name">Camera			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='camera'></td></tr>
-					<tr><td class="name">Phone			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='phone'></td></tr>
-					<tr><td class="name">Solar Charger	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='solar_charger'></td></tr>
-					<tr class="header_row"><td>tools</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Waterproof Matches	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='matches'></td></tr>
-					<tr><td class="name">Duct Tape		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='duct_tape'></td></tr>				
-					<tr><td class="name">Multi-tool		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='multitool'></td></tr>
-					<tr class="header_row"><td>navigation</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Compass			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='compass'></td></tr>
-					<tr><td class="name">Maps			</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='maps'></td></tr>
-					<tr class="header_row"><td>safety</td><td>description</td><td>weight (oz.)</td></tr>
-					<tr><td class="name">Bear Mace		</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='bear_mace'></td></tr>
-					<tr><td class="name">Personal Locator Beacon	</td><td><input type='text' class="description" size="25"></td><td><input type='text' class="calculate"  size="10" id='oh_god_help_us'></td></tr>
-					</table>
-				</div>
-			</div> <!-- end accordion div -->
-	</div>
-
-			<div id="bottom">
-				<h2>All Items</h2>
-				<table id="all_pack_items">
-					<thead><tr><td>Item</td><td>Category</td><td>Weight</td></tr></thead>
-					<tbody></tbody>
+	<div class="section group">
+		<div id="left" class="col span_1_of_3">
+			<div id="name" class="content_boxes">pack weight</div>
+			<div id="output" class="content_boxes"><div id="chosen_unit"></div></div>
+			<div id="units" class="content_boxes">	
+				<button class = "btn btn-1 btn-1a" id="ounces">ounces</button>
+				<button class = "btn btn-1 btn-1a" id="grams">grams</button>
+			</div>
+			<div id = "summary" class="content_boxes">
+				<p>Summary</p>
+				<table>
+					<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
+					<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
+					<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
+					<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
+					<tr><td class = "category_title">Other:</td>			<td><div id="other_total"></div></td></tr>
 				</table>
-			</div> 
+				<br />
+			</div>
+	 	</div> <!-- end of left div -->
+
+		<div id="right" class="col span_2_of_3">
+				<div id="accordion" class="content_boxes">
+					<h3>Big 3</h3>
+					<div id="big3">
+						<table>
+							<tr class="header_row"><td>shelter</td><td>description</td><td>weight (oz.)</td></tr>
+							<tr><td class="col_1">Tent 					</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='tent'></td></tr>
+							<tr><td class="col_1">Tent Stakes			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='tent_stakes'></td></tr>
+							<tr><td class="col_1">Ground Cloth 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='ground_cloth'></td></tr>
+							<tr class="header_row"><td>sleep</td><td>description</td><td>weight (oz.)</td></tr>					
+							<tr><td class="col_1">Sleeping Bag			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='sleeping_bag'></td></tr>
+							<tr><td class="col_1">Sleeping Pad 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='sleeping_pad'></td></tr>
+							<tr><td class="col_1">Sleeping Bag Liner	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='sleeping_bad_liner'></td></tr>					
+							<tr class="header_row"><td>packing</td><td>description</td><td>weight (oz.)</td></tr>
+							<tr><td class="col_1">Pack					</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='backpack'></td></tr>					
+							<tr><td class="col_1">Pack Cover			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='backpack_raincover'></td></tr>
+							<tr><td class="col_1">Stuff Sacks 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='stuff_sacks'></td></tr>
+						</table>
+					</div>
+					<h3>Clothing</h3> 
+					<div id = "clothing">
+						<table>
+							<tr class="header_row"><td>clothing</td><td>description</td><td>weight (oz.)</td></tr>
+							<tr><td class="col_1">Rain Pants 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='rain_pants'></td></tr>
+							<tr><td class="col_1">Rain Jacket			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='rain_jacket'></td></tr>
+							<tr><td class="col_1">Fleece Jacket 		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='fleece_jacket'></td></tr>
+							<tr><td class="col_1">Pants 				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='pants'></td></tr>
+							<tr><td class="col_1">Shorts 				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='shorts'></td></tr>
+							<tr><td class="col_1">Baselayer Top			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='base_layer_top'></td></tr>
+							<tr><td class="col_1">Baselayer Bottom		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='base_layer_bottoms'></td></tr>
+							<tr><td class="col_1">Long Sleeve Shirt		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='long_sleeve'></td></tr>
+							<tr><td class="col_1">Short Sleeve Shirt	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='short_sleeve'></td></tr>
+							<tr><td class="col_1">Underwear 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='underwear'></td></tr>
+							<tr><td class="col_1">Bra					</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='bra'></td></tr>
+							<tr class="header_row"><td>footwear</td><td>description</td><td>weight (oz.)</td></tr>
+							<tr><td class="col_1">Camp Shoes			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='camp_shoes'></td></tr>
+							<tr><td class="col_1">Hiking Shoes			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='hiking_shoes'></td></tr>					
+							<tr><td class="col_1">Wool Socks			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='wool_socks'></td></tr>
+							<tr><td class="col_1">Hiking Socks			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='hiking_socks'></td></tr>
+							<tr><td class="col_1">Gaiters				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='gaiters'></td></tr>
+							<tr class="header_row"><td>accessories</td><td>description</td><td>weight (oz.)</td></tr>
+							<tr><td class="col_1">Wool Hat				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='wool_hat'></td></tr>
+							<tr><td class="col_1">Ball Cap 				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='ball_cap'></td></tr>					
+							<tr><td class="col_1">Buff					</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='buff'></td></tr>					
+							<tr><td class="col_1">Gloves				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='gloves'></td></tr>					
+							<tr><td class="col_1">Overmits				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='overmits'></td></tr>
+						</table>
+					</div>
+					<h3>Kitchen</h3>
+					<div id = "kitchen">
+						<table>
+						<tr class="header_row"><td>cooking/eating</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Stove 			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='stove'></td></tr>
+						<tr><td class="col_1">Fuel				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='fuel'></td></tr>
+						<tr><td class="col_1">Pot 				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='pot'></td></tr>
+						<tr><td class="col_1">Spork				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='spork'></td></tr>
+						<tr><td class="col_1">Cup				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='cup'></td></tr>
+						<tr class="header_row"><td>storage</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Bear Bag/Can 		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='bear_bag'></td></tr>
+						<tr><td class="col_1">Bear Bag Rope		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='bear_bag_rope'></td></tr>					
+						<tr><td class="col_1">Grocery Bags    	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='grocery_bags'></td></tr>
+						<tr><td class="col_1">Ziplock Bags    	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='ziplock_bags'></td></tr>				
+						<tr class="header_row"><td>water</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Aqua Mira 		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='aqua_mira'></td></tr>
+						<tr><td class="col_1">Water Bottles   	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='water_bottles'></td></tr>				
+						<tr><td class="col_1">Water Bladder		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"  id='water_bladder'></td></tr>
+						</table>
+					</div>
+					<h3>Health & Hygiene</h3>
+					<div id = "health">
+						<table>
+						<tr class="header_row"><td>hygiene</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Tooth Brush		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='tooth_brush'></td></tr>
+						<tr><td class="col_1">Tooth Paste		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='tooth_paste'></td></tr>
+						<tr><td class="col_1">Handkerchief		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='trowel'></td></tr>
+						<tr><td class="col_1">Toilet Paper		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='toilet_paper'></td></tr>
+						<tr><td class="col_1">Hand Sanitizer	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='hand_sanitizer'></td></tr>
+						<tr><td class="col_1">Trowel			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='trowel'></td></tr>
+						<tr class="header_row"><td>health</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">First Aid Kit		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='first_aid_kit'></td></tr>
+						<tr><td class="col_1">Bandaids			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='band_aids'></td></tr>
+						<tr><td class="col_1">Moleskin			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='moleskin'></td></tr>
+						<tr><td class="col_1">Aspirin    		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='aspirin'></td></tr>				
+						<tr class="header_row"><td>extra</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Lip Balm			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='lip_balm'></td></tr>
+						<tr><td class="col_1">Bug Spray			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='bug_spray'></td></tr>
+						<tr><td class="col_1">Hair Ties 		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='hair_ties'></td></tr>
+						<tr><td class="col_1">Sun Screen		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='sun_screen'></td></tr>
+						</table>
+					</div>
+					<h3>Other/Extra</h3>
+					<div id = "other">
+						<table>
+						<tr class="header_row"><td>electronics</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Umbrella			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='umbrella'></td></tr>
+						<tr><td class="col_1">Trekking Poles	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='trekking_poles'></td></tr>
+						<tr><td class="col_1">Sunglasses		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='sunglasses'></td></tr>
+						<tr><td class="col_1">Headlamp			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='headlamp'></td></tr>
+						<tr><td class="col_1">Book				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='book'></td></tr>
+						<tr class="header_row"><td>electronics</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Batteries			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='batteries'></td></tr>
+						<tr><td class="col_1">Camera			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='camera'></td></tr>
+						<tr><td class="col_1">Phone				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='phone'></td></tr>
+						<tr><td class="col_1">Solar Charger		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='solar_charger'></td></tr>
+						<tr class="header_row"><td>tools</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Waterproof Matches</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='matches'></td></tr>
+						<tr><td class="col_1">Duct Tape			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='duct_tape'></td></tr>				
+						<tr><td class="col_1">Multi-tool		</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='multitool'></td></tr>
+						<tr class="header_row"><td>navigation</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Compass			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='compass'></td></tr>
+						<tr><td class="col_1">Maps				</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='maps'></td></tr>
+						<tr class="header_row"><td>safety</td><td>description</td><td>weight (oz.)</td></tr>
+						<tr><td class="col_1">Bear Mace			</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='bear_mace'></td></tr>
+						<tr><td class="col_1">Beacon	</td><td class="col_2"><input type='text' class="desc"></td><td class="col_3"><input type='text' class="calculate"   id='oh_god_help_us'></td></tr>
+						</table>
+					</div>
+				</div> <!-- end accordion div -->
+		</div> <!-- end right div -->
+ 	</div> <!-- end section group div -->
+
+	<div class="section group">
+		<div id="bottom" class="col span_3_of_3" class="content_boxes">
+			<h2>All Items</h2>
+			<table id="all_pack_items">
+				<thead><tr><td>Item</td><td>Category</td><td>Weight</td></tr></thead>
+				<tbody></tbody>
+			</table>
+		</div> <!-- end bottom div -->
+	</div> <!-- end section group div -->
  
 </div> <!-- end of wrapper div -->
 
 
-<script>
-	console.log('hey-o')
-</script>
-
- 	<script type="text/javascript" src="js/listProperties.js"></script>
+ <script type="text/javascript" src="js/listProperties.js"></script>
 
 	
 </body>
