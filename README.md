@@ -1,4 +1,4 @@
-### Baby's First Javascript Project
+### Simple Pack Weight Calculator
 
 Made for Dynamic Web Applications Class, Fall 2013
 
