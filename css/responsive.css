@@ -49,7 +49,7 @@
 
 
 /* ------------------------------------- 
-  Middle Screens             
+  Middle Screens: min-width:600px
 ------------------------------------- */
 /*
 @media only screen  and (max-device-width : 800px) and (min-device-width : 601px) {
@@ -67,6 +67,9 @@
         -moz-box-shadow: 1px 1px 10px #000000;
         box-shadow:  1px 1px 10px #000000;
         margin-bottom: 15px;
+    }
+    #toggle_summary{
+        display: none;
     }
 }
 
@@ -88,7 +91,7 @@
 
 
 /* ------------------------------------- 
-  Small Screens             
+  Small Screens: max-width = 600px            
 ------------------------------------- */
 
 /*@media only screen and (max-device-width: 600px) and (min-device-width: 0px){
@@ -103,14 +106,14 @@
         margin-top:0;
     }
     #accordion .col_1{width: 35%;}
-    #accordion .col_2{width: 55%;}
+    #accordion .col_2{width: 55%;clear:both;}
     #accordion .col_3{width: 5%;}
     .content_boxes{
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow:  none; 
     }
-    #name,#output{
+    #name,#output,#toggle_summary{
         float:left;
         padding:0;
         height: 50px;
@@ -119,24 +122,39 @@
     }
     #name{
         position:fixed;
-    z-index:4;
+        z-index:4;
         left:0px;
         top:0px;
         width:40%;
     }
     #output{
+        padding:15px;
         position:fixed;
-    z-index:4;
+        z-index:4;
         left:40%;
         top:0px;
-        width:60%;
-        font-size: 30px;
+        width:50%;
     }
+    #toggle_summary{
+        padding: 10px;
+        position:fixed;
+        z-index:4;
+        left:90%;
+        top:0px;
+        width:10%;
+        display:block;
+    }
+
     #units,#summary,#accordion{
         width:90%;
         margin:10px auto;
     }
-    #units{
+    #summary{
+        display: none;
+        margin-top: 70px;
+        margin-bottom: -50px;
+    }
+    #accordion{
         margin-top: 70px;
     }
     #accordion .ui-accordion-content{
@@ -152,7 +170,7 @@
     input[class="calculate"]{
         width: 50px;
     }
-    #name,#output{
+    #name,#output,#toggle_summary{
         height: 55px;
         line-height: 100%;
         text-align: right;
@@ -161,6 +179,7 @@
     }
     #output{
         padding-top:5px;
+        font-size: 40px;
         text-align: center;
         vertical-align: bottom;
     }

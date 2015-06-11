@@ -137,6 +137,7 @@ table{
 ================================== */
 
 #summary{
+    display:block;
     background-color: #CB8C1D;
     height: auto;
     font-family: 'Doppio One', sans-serif;
@@ -145,7 +146,7 @@ table{
 }
 
 #summary p{
-    padding: 15px;
+    padding: 15px 0 0 15px;
     font-family: 'Doppio One', sans-serif;
     font-size: 24px;
     color: #383838;
@@ -162,6 +163,15 @@ table{
 #summary td{
     border: 1px solid #fff;
     padding: 5px;
+}
+
+#toggle_summary{
+    display: none;
+    background-color: #CB8C1D;
+}
+
+#toggle_summary a{
+    color: #000;
 }
 
 /*
