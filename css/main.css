@@ -165,13 +165,17 @@ table{
     padding: 5px;
 }
 
-#toggle_summary{
-    display: none;
-    background-color: #CB8C1D;
+
+#toggle_box{
+    display: block;
 }
 
-#toggle_summary a{
-    color: #000;
+#toggle_button{
+    display: none;
+}
+
+#toggle_button a{
+    color: #fff;
 }
 
 /*

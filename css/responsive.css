@@ -68,7 +68,10 @@
         box-shadow:  1px 1px 10px #000000;
         margin-bottom: 15px;
     }
-    #toggle_summary{
+    #toggle_box{
+        display: block;
+    }
+    #toggle_button{
         display: none;
     }
 }
@@ -84,6 +87,9 @@
     }
     #accordion .ui-accordion-content{
         padding: 5px;
+    }
+    #toggle_box{
+        display: block;
     }
 }
 
@@ -113,7 +119,7 @@
         -moz-box-shadow: none;
         box-shadow:  none; 
     }
-    #name,#output,#toggle_summary{
+    #name,#output,#toggle_button{
         float:left;
         padding:0;
         height: 50px;
@@ -135,7 +141,7 @@
         top:0px;
         width:50%;
     }
-    #toggle_summary{
+    #toggle_button{
         padding: 10px;
         position:fixed;
         z-index:4;
@@ -149,7 +155,7 @@
         width:90%;
         margin:10px auto;
     }
-    #summary{
+    #toggle_box{
         display: none;
         margin-top: 70px;
         margin-bottom: -50px;
@@ -170,7 +176,7 @@
     input[class="calculate"]{
         width: 50px;
     }
-    #name,#output,#toggle_summary{
+    #name,#output,#toggle_button{
         height: 55px;
         line-height: 100%;
         text-align: right;

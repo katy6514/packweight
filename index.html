@@ -39,19 +39,6 @@
 	<!-- google font -->
 	<link href='http://fonts.googleapis.com/css?family=Viga|Roboto:300|Doppio+One|Source+Sans+Pro:400,400italic|Days+One' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript">
-<!--
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-//-->
-</script>
-
-
 </head>
 
 
@@ -68,20 +55,29 @@
 				<button class = "btn btn-1 btn-1a" id="grams">grams</button>
 			</div> -->
 
-			<div id="toggle_summary">
-				<a href="#" onclick="toggle_visibility('summary');">+</a>
+			<div id="toggle_button">
+				<a href="#" onclick="toggle_visibility('toggle_box');">
+					<img src="./img/iconPlus_white.svg" />
+				</a>
 			</div>
 			
-			<div id = "summary" class="content_boxes">
-				<p>Summary</p>
-				<table>
-					<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
-					<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
-					<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
-					<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
-					<tr><td class = "category_title">Other:</td>			<td><div id="other_total"></div></td></tr>
-				</table>
-				<br />
+			<div id="toggle_box">
+				<div id = "units" class="content_boxes">
+					<button class = "btn btn-1 btn-1a" id="ounces" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">ounces</button>
+					<button class = "btn btn-1 btn-1a" id="grams" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">grams</button>
+				</div>
+
+				<div id = "summary" class="content_boxes">
+					<p>Summary</p>
+					<table>
+						<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
+						<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
+						<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
+						<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
+						<tr><td class = "category_title">Other:</td>			<td><div id="other_total"></div></td></tr>
+					</table>
+					<br />
+				</div>
 			</div>
 	 	</div> <!-- end of left div -->
 

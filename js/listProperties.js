@@ -11,6 +11,14 @@ var packed_other	= [[],[],[]];
 var all_pack_items	= [[],[],[]];
 
 
+
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+}
 /*-------------------------------------------------------------------------------------------------
 	tab function
 -------------------------------------------------------------------------------------------------*/
@@ -135,6 +143,7 @@ $('#ounces').click(function(){
 	$('#ounces').css('color','#0e83cd');
 	$('#grams').css('background-color','');
 	$('#grams').css('color','white');
+    converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit);
 });
 
 $('#grams').click(function(){
@@ -144,6 +153,7 @@ $('#grams').click(function(){
 	$('#ounces').css('color','white');
 	$('#grams').css('background-color','white');
 	$('#grams').css('color','#0e83cd');
+    converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit);
 });
 
 
@@ -172,28 +182,27 @@ function checkInput(item_weight,item_name) {
 	};
 };
 
+
+
 /*-------------------------------------------------------------------------------------------------
-	get values and add to table
+    get values and add to table
 -------------------------------------------------------------------------------------------------*/
 
 function addToTable(item,category) { 
 
-	//get the item name in the html td to the left of the input td in question	
-	item_name 		= item.parents('tr').find('td').html(); 
-	//get item weight
-	item_weight 	= item.val(); 
+ //get the item name in the html td to the left of the input td in question  
+ item_name       = item.parents('tr').find('td').html(); 
+ //get item weight
+ item_weight     = item.val(); 
 
-	//if the input cell has a number in it, add a row to the jqw
-	if(item_weight !== ""){
-		$('#all_pack_items').dataTable().fnAddData( [
-		item_name,
-		category,
-		item_weight ] );
-	}
+ //if the input cell has a number in it, add a row to the jqw
+ if(item_weight !== ""){
+     $('#all_pack_items').dataTable().fnAddData( [
+     item_name,
+     category,
+     item_weight ] );
+ }
 };
-
-
-
 
 /*-------------------------------------------------------------------------------------------------
 	calculate
@@ -202,11 +211,11 @@ function addToTable(item,category) {
 
 function calculateWeight(item_name) {
 
-    var clothingTotal = 0;
-    var big3Total = 0;
-    var kitchenTotal = 0;
-    var healthTotal = 0;
-    var otherTotal = 0;
+    clothingTotal = 0;
+    big3Total = 0;
+    kitchenTotal = 0;
+    healthTotal = 0;
+    otherTotal = 0;
 
     //reset the jquery table to an empty table and regenerate every time an input cell is changed
     $('#all_pack_items').dataTable().fnClearTable();
@@ -253,5 +262,9 @@ $(".calculate").change(function() {
 	checkInput($(this).val(),$(this).attr('id'));
     calculateWeight($(this).attr('id'));
 });
+
+
+
+
 
 
