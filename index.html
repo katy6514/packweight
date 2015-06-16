@@ -49,36 +49,38 @@
 	<div class="section group">
 		<div id="left" class="col span_1_of_3">
 			<div id="name" class="content_boxes">pack weight</div>
-			<div id="output" class="content_boxes"><div id="chosen_unit"></div></div>
+			<div id="output" class="content_boxes"><div id="chosen_unit">test</div></div>
 			<!-- <div id="units" class="content_boxes">	
 				<button class = "btn btn-1 btn-1a" id="ounces">ounces</button>
 				<button class = "btn btn-1 btn-1a" id="grams">grams</button>
 			</div> -->
 
-			<div id="toggle_button">
-				<a href="#" onclick="toggle_visibility('toggle_box');">
-					<img src="./img/iconPlus_white.svg" />
-				</a>
+			<div id="expand_summary">
+				<a href="#" onclick="toggle_visibility('summary');">S</a>
+			</div>
+
+			<div id="expand_units">
+				<a href="#" onclick="toggle_visibility('units');">U</a>
 			</div>
 			
-			<div id="toggle_box">
-				<div id = "units" class="content_boxes">
-					<button class = "btn btn-1 btn-1a" id="ounces" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">ounces</button>
-					<button class = "btn btn-1 btn-1a" id="grams" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">grams</button>
-				</div>
-
-				<div id = "summary" class="content_boxes">
-					<p>Summary</p>
-					<table>
-						<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
-						<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
-						<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
-						<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
-						<tr><td class = "category_title">Other:</td>			<td><div id="other_total"></div></td></tr>
-					</table>
-					<br />
-				</div>
+			<!-- <div id="toggle_box"> -->
+			<div id="units" class="content_boxes">
+				<button class = "btn btn-1 btn-1a" id="ounces" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">ounces</button>
+				<button class = "btn btn-1 btn-1a" id="grams" onclick="converter(clothingTotal,big3Total,kitchenTotal,healthTotal,otherTotal,chosen_unit)">grams</button>
 			</div>
+
+			<div id="summary" class="content_boxes">
+				<p>Summary</p>
+				<table>
+					<tr><td class = "category_title">Big3:</td>				<td><div id="big3_total"></div></td></tr>
+					<tr><td class = "category_title">Clothing:</td>			<td><div id="clothing_total"></div></td></tr>
+					<tr><td class = "category_title">Kitchen:</td>			<td><div id="kitchen_total"></div></td></tr>
+					<tr><td class = "category_title">Health & Hygiene:</td>	<td><div id="health_total"></div></td></tr>
+					<tr><td class = "category_title">Other:</td>			<td><div id="other_total"></div></td></tr>
+				</table>
+				<br />
+			</div>
+			<!-- </div> -->
 	 	</div> <!-- end of left div -->
 
 		<div id="right" class="col span_2_of_3">
@@ -214,7 +216,7 @@
 </div> <!-- end of wrapper div -->
 
 
- <script type="text/javascript" src="js/listProperties.js"></script>
+ <script type="text/javascript" src="js/main.js"></script>
 
 	
 </body>

@@ -119,36 +119,32 @@
         -moz-box-shadow: none;
         box-shadow:  none; 
     }
-    #name,#output,#toggle_button{
-        float:left;
+    #name,#output,#expand_summary,#expand_units{
+        position:fixed;
+        top:0px;
+        z-index:4;
         padding:0;
         height: 50px;
         text-align: center;
         font-size: 30px;
+        display: block;
     }
     #name{
-        position:fixed;
-        z-index:4;
         left:0px;
-        top:0px;
         width:40%;
     }
     #output{
         padding:15px;
-        position:fixed;
-        z-index:4;
         left:40%;
-        top:0px;
         width:50%;
     }
-    #toggle_button{
-        padding: 10px;
-        position:fixed;
-        z-index:4;
-        left:90%;
-        top:0px;
+    #expand_summary{
+        left:80%;
         width:10%;
-        display:block;
+    }
+    #expand_units{
+        left:90%;
+        width:10%;
     }
 
     #units,#summary,#accordion{

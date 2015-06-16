@@ -170,11 +170,21 @@ table{
     display: block;
 }
 
-#toggle_button{
+#expand_units{
+    background-color: #63AA9C;
     display: none;
 }
 
-#toggle_button a{
+#expand_units a{
+    color: #fff;
+}
+
+#expand_summary{
+    background-color: #CB8C1D;
+    display: none;
+}
+
+#expand_summary a{
     color: #fff;
 }
 
