@@ -166,9 +166,9 @@ table{
 }
 
 
-#toggle_box{
+/*#toggle_box{
     display: block;
-}
+}*/
 
 #expand_units{
     background-color: #63AA9C;
@@ -203,10 +203,6 @@ table{
 */
 
 
-.category_title{
-    font-family: 'Days One', sans-serif;
-    width: 70%;
-}
 
 /*----------------------------------------------------------------------------------------
     right side
@@ -215,6 +211,11 @@ table{
 
 #right{
     color: #ffffff;
+}
+
+.category_title{
+    font-family: 'Days One', sans-serif;
+    width: 70%;
 }
 
 

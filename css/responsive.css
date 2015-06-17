@@ -58,7 +58,7 @@
     }
 }*/
 
-@media only screen  and (max-width : 1025px) and (min-width : 601px) {
+@media only screen  and (max-width : 1025px) and (min-width : 701px) {
     #wrapper{
         margin: 20px 30px;
     }
@@ -68,15 +68,21 @@
         box-shadow:  1px 1px 10px #000000;
         margin-bottom: 15px;
     }
-    #toggle_box{
+    #units{
+        display: block;
+    }
+    #summary{
+        display: block;
+    }
+    /*#toggle_box{
         display: block;
     }
     #toggle_button{
         display: none;
-    }
+    }*/
 }
 
-@media only screen  and (max-width : 900px) and (min-width : 601px) {
+@media only screen  and (max-width : 900px) and (min-width : 701px) {
 
     #accordion .col_1{width: 42%;}
     #accordion .col_2{width: 50%;}
@@ -88,9 +94,15 @@
     #accordion .ui-accordion-content{
         padding: 5px;
     }
-    #toggle_box{
+    #units{
         display: block;
     }
+    #summary{
+        display: block;
+    }
+    /*#toggle_box{
+        display: block;
+    }*/
 }
 
 
@@ -105,11 +117,11 @@
     .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
 }*/
 
-@media only screen and (max-width: 600px) and (min-width: 0px) {
+@media only screen and (max-width: 700px) and (min-width: 0px) {
     .col { margin: 0;}
     .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
     #wrapper{
-        margin-top:0;
+        margin-top:70px;
     }
     #accordion .col_1{width: 35%;}
     #accordion .col_2{width: 55%;clear:both;}
@@ -138,11 +150,21 @@
         left:40%;
         width:50%;
     }
+    #units{
+        display: none;
+    }
+    #summary{
+        display: none;
+    }
     #expand_summary{
+        display: block;
+        padding: 15px;
         left:80%;
         width:10%;
     }
     #expand_units{
+        display: block;
+        padding: 15px;
         left:90%;
         width:10%;
     }
@@ -151,13 +173,12 @@
         width:90%;
         margin:10px auto;
     }
-    #toggle_box{
+    /*#toggle_box{
         display: none;
         margin-top: 70px;
         margin-bottom: -50px;
-    }
+    }*/
     #accordion{
-        margin-top: 70px;
     }
     #accordion .ui-accordion-content{
         padding: 5px;
@@ -165,19 +186,47 @@
 }
 
 
-@media only screen and (max-width: 400px) and (min-width: 0px) {
+@media only screen and (max-width: 550px) and (min-width: 0px) {
+    body{
+        background-image: none;
+    }
+    #units,#summary,#accordion{
+        width:100%;
+        margin: 0px;
+    }
+    #wrapper{
+        padding-top: 55px;
+        margin: 0px;
+    }
     #accordion .col_1{width: 45%;}
     #accordion .col_2{width: 45%;}
     #accordion .col_3{width: 5%;}
     input[class="calculate"]{
         width: 50px;
     }
-    #name,#output,#toggle_button{
+    #name,#output,#expand_units,#expand_summary{
         height: 55px;
         line-height: 100%;
         text-align: right;
         font-size: 22px;
         padding: 5px 10px;
+    }
+    #name{
+        left:0px;
+        width:30%;
+    }
+    #output{
+        padding:15px;
+        left:30%;
+        width:40%;
+    }
+    #expand_units{
+        left:70%;
+        width: 15%;
+    }
+    #expand_summary{
+        left:85%;
+        width: 15%;
     }
     #output{
         padding-top:5px;
