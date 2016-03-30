@@ -1,6 +1,6 @@
 
-/* ------------------------------------- 
-  Large Screens             
+/* -------------------------------------
+  Large Screens
 ------------------------------------- */
 
 
@@ -48,7 +48,7 @@
 
 
 
-/* ------------------------------------- 
+/* -------------------------------------
   Middle Screens: min-width:600px
 ------------------------------------- */
 /*
@@ -89,7 +89,7 @@
     #accordion .col_3{width: 8%;}
     .btn {
         width:80px;
-        font-size: 80%;    
+        font-size: 80%;
     }
     #accordion .ui-accordion-content{
         padding: 5px;
@@ -108,8 +108,8 @@
 
 
 
-/* ------------------------------------- 
-  Small Screens: max-width = 600px            
+/* -------------------------------------
+  Small Screens: max-width = 600px
 ------------------------------------- */
 
 /*@media only screen and (max-device-width: 600px) and (min-device-width: 0px){
@@ -129,7 +129,7 @@
     .content_boxes{
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
-        box-shadow:  none; 
+        box-shadow:  none;
     }
     #name,#output,#expand_summary,#expand_units{
         position:fixed;
@@ -156,18 +156,21 @@
     #summary{
         display: none;
     }
-    #expand_summary{
+    #expand_units{
         display: block;
-        padding: 15px;
         left:80%;
         width:10%;
     }
-    #expand_units{
+    #expand_summary{
         display: block;
-        padding: 15px;
         left:90%;
         width:10%;
     }
+    #expand_summary i,#expand_units i{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
 
     #units,#summary,#accordion{
         width:90%;
@@ -205,29 +208,38 @@
         width: 50px;
     }
     #name,#output,#expand_units,#expand_summary{
-        height: 55px;
+        height: 60px;
         line-height: 100%;
         text-align: right;
-        font-size: 22px;
-        padding: 5px 10px;
+        font-size: 28px;
+        padding: 2px 10px;
     }
     #name{
         left:0px;
         width:30%;
     }
     #output{
-        padding:15px;
+        padding:20px;
         left:30%;
         width:40%;
     }
     #expand_units{
+        text-align: center;
         left:70%;
         width: 15%;
+        padding:0px;
     }
     #expand_summary{
+        padding:0px;
+        text-align: center;
         left:85%;
         width: 15%;
     }
+    #expand_summary i,#expand_units i{
+        font-size: 40px;
+    }
+
+
     #output{
         padding-top:5px;
         font-size: 40px;

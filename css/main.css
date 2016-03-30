@@ -1,11 +1,18 @@
 
-/* ==========================================================================  
+/* ==========================================================================
 
    CSS Pack Weight - Author: Katherine Wyman www.katorthedinosaur.com
 
     First JS project
 
    ========================================================================== */
+
+   *, *:after, *:before {
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+   }
+
 
 body {
     line-height:1.25em;
@@ -76,7 +83,13 @@ table{
     margin-bottom: 15px;
 }
 
+/*.icons{
+    fill: white;
+}
 
+svg:hover path {
+    fill: red;
+}*/
 
 /*----------------------------------------------------------------------------------------
     left side
@@ -220,7 +233,7 @@ table{
 
 
 /* ==============================================================
- Accordion restyling 
+ Accordion restyling
 ============================================================== */
 input[class="item_weight_input"]{
     margin-left: 5px;
@@ -409,11 +422,6 @@ input[class="calculate"]{
     transition: all 0.3s;
 }
 
-*, *:after, *:before { 
-    -webkit-box-sizing: border-box; 
-    -moz-box-sizing: border-box; 
-    box-sizing: border-box; 
-}
 
 
 
