@@ -1,5 +1,5 @@
-### Simple Pack Weight Calculator
+# Pack Weight Calculator
 
-Made for Dynamic Web Applications Class, Fall 2013
+In an effort to lighten my load while backpacking, I made this calculator. Options include input for either ounces or grams.
 
-This was my gear list when I first started backpacking. It's a little rudimentary. If you want to see my current gear list, check out my hiking blog at www.katyhikes.com
+Live site at: [pack.katherinewyman.com](http://pack.katherinewyman.com/)
